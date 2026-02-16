@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Global styles for the entire app (Google Docs-inspired: clean and minimal) */
 body {
   font-family: 'Roboto', 'Arial', sans-serif;
@@ -72,4 +73,33 @@ h2 {
   h2 {
     font-size: 1.3rem;
   }
+=======
+
+/* Global styles for the entire app */
+body {
+  font-family: 'Arial', sans-serif; /* Simple, clean font */
+  background-color: #f8f9fa; /* Light gray background for a modern look */
+  color: #333; /* Dark text for readability */
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px; /* Slightly wider for better form display */
+  margin: 0 auto; /* Center the content */
+  padding: 20px;
+}
+
+/* Style headings */
+h2 {
+  color: #007bff; /* Bootstrap primary blue */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Simple button hover effect */
+.btn-primary:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  border-color: #0056b3;
+>>>>>>> 287f0f602e8703ea6fc7d8e9107d494064d4e0e0
 }
