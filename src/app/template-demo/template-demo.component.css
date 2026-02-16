@@ -1,0 +1,16 @@
+.container {
+  max-width: 600px;
+}
+
+.text-danger {
+  font-size: 0.875rem;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+}
+
+/* Optional: Style for textarea */
+textarea {
+  resize: vertical;  /* Allow vertical resizing */
+}
