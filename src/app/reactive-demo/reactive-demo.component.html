@@ -1,1 +1,161 @@
-<p>reactive-demo works!</p>
+<div class="container">
+  <h2>Reactive Form Demo</h2>
+  <div class="form-container">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <!-- Username Field -->
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input
+          type="text"
+          id="username"
+          formControlName="username"
+          class="form-control"
+        />
+        <div *ngIf="isInvalid('username')" class="text-danger">
+          <div *ngIf="form.get('username')?.errors?.['required']">Username is required.</div>
+          <div *ngIf="form.get('username')?.errors?.['minlength']">Username must be at least 3 characters.</div>
+        </div>
+      </div>
+
+      <!-- Email Field -->
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input
+          type="email"
+          id="email"
+          formControlName="email"
+          class="form-control"
+        />
+        <div *ngIf="isInvalid('email')" class="text-danger">
+          <div *ngIf="form.get('email')?.errors?.['required']">Email is required.</div>
+          <div *ngIf="form.get('email')?.errors?.['email']">Please enter a valid email.</div>
+        </div>
+      </div>
+
+      <!-- Password Field -->
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input
+          type="password"
+          id="password"
+          formControlName="password"
+          class="form-control"
+        />
+        <div *ngIf="isInvalid('password')" class="text-danger">
+          <div *ngIf="form.get('password')?.errors?.['required']">Password is required.</div>
+          <div *ngIf="form.get('password')?.errors?.['minlength']">Password must be at least 6 characters.</div>
+        </div>
+      </div>
+
+      <!-- Role Field -->
+      <div class="mb-3">
+        <label for="role" class="form-label">Role</label>
+        <select
+          id="role"
+          formControlName="role"
+          class="form-select"
+        >
+          <option *ngFor="let r of roles; track r" [value]="r">{{ r }}</option>
+        </select>
+        <div *ngIf="isInvalid('role')" class="text-danger">
+          Role is required.
+        </div>
+      </div>
+
+      <!-- Gender Field (Radios in a row) -->
+      <div class="mb-3">
+        <label class="form-label">Gender</label>
+        <div class="row">
+          <div class="col-auto">
+            <div class="form-check">
+              <input
+                type="radio"
+                id="male"
+                value="male"
+                formControlName="gender"
+                class="form-check-input"
+              />
+              <label for="male" class="form-check-label">Male</label>
+            </div>
+          </div>
+          <div class="col-auto">
+            <div class="form-check">
+              <input
+                type="radio"
+                id="female"
+                value="female"
+                formControlName="gender"
+                class="form-check-input"
+              />
+              <label for="female" class="form-check-label">Female</label>
+            </div>
+          </div>
+          <div class="col-auto">
+            <div class="form-check">
+              <input
+                type="radio"
+                id="other"
+                value="other"
+                formControlName="gender"
+                class="form-check-input"
+              />
+              <label for="other" class="form-check-label">Other</label>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="isInvalid('gender')" class="text-danger">
+          Gender is required.
+        </div>
+      </div>
+
+      <!-- Status Field (Radios in a row) -->
+      <div class="mb-3">
+        <label class="form-label">Status</label>
+        <div class="row">
+          <div class="col-auto">
+            <div class="form-check">
+              <input
+                type="radio"
+                id="permanent"
+                value="permanent"
+                formControlName="status"
+                class="form-check-input"
+              />
+              <label for="permanent" class="form-check-label">Permanent</label>
+            </div>
+          </div>
+          <div class="col-auto">
+            <div class="form-check">
+              <input
+                type="radio"
+                id="probationary"
+                value="probationary"
+                formControlName="status"
+                class="form-check-input"
+              />
+              <label for="probationary" class="form-check-label">Probationary</label>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="isInvalid('status')" class="text-danger">
+          Status is required.
+        </div>
+      </div>
+
+      <!-- Comments Field -->
+      <div class="mb-3">
+        <label for="comments" class="form-label">Comments (Notes)</label>
+        <textarea
+          id="comments"
+          formControlName="comments"
+          class="form-control"
+          rows="4"
+          placeholder="Enter any additional notes..."
+        ></textarea>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Submit</button>
+    </form>
+  </div>
+</div>

@@ -29,15 +29,7 @@ export class TemplateDemoComponent {
         status: this.status,
         comments: this.comments
       });
-      alert('Form submitted successfully! Data: ' + JSON.stringify({
-        username: this.username,
-        email: this.email,
-        password: this.password,
-        country: this.country,
-        gender: this.gender,
-        status: this.status,
-        comments: this.comments
-      }));
+      alert('Form submitted successfully!');
     } else {
       alert('Form is invalid. Please check the fields.');
     }

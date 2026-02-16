@@ -3,8 +3,8 @@ import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  standalone: true,  // Ensure it's standalone
-  imports: [RouterOutlet, RouterLink, RouterLinkActive],  // Import routing directives
+  standalone: true,
+  imports: [RouterOutlet, RouterLink, RouterLinkActive],
   template: `
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">

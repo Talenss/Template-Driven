@@ -1,178 +1,184 @@
-<div class="container mt-5">
+<div class="container">
   <h2>Template-Driven Form Demo</h2>
-  <form #form="ngForm" (ngSubmit)="onSubmit(form)">
-    <!-- Username Field with Validators -->
-    <div class="mb-3">
-      <label for="username" class="form-label">Username</label>
-      <input
-        type="text"
-        id="username"
-        name="username"
-        class="form-control"
-        [(ngModel)]="username"
-        required
-        minlength="3"
-        #username="ngModel"
-      />
-      <div *ngIf="username.invalid && username.touched" class="text-danger">
-        <div *ngIf="username.errors?.['required']">Username is required.</div>
-        <div *ngIf="username.errors?.['minlength']">Username must be at least 3 characters.</div>
-      </div>
-    </div>
-
-    <!-- Email Field -->
-    <div class="mb-3">
-      <label for="email" class="form-label">Email</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        class="form-control"
-        [(ngModel)]="email"
-        required
-        email
-        #email="ngModel"
-      />
-      <div *ngIf="email.invalid && email.touched" class="text-danger">
-        <div *ngIf="email.errors?.['required']">Email is required.</div>
-        <div *ngIf="email.errors?.['email']">Please enter a valid email.</div>
-      </div>
-    </div>
-
-    <!-- Password Field -->
-    <div class="mb-3">
-      <label for="password" class="form-label">Password</label>
-      <input
-        type="password"
-        id="password"
-        name="password"
-        class="form-control"
-        [(ngModel)]="password"
-        required
-        minlength="6"
-        #password="ngModel"
-      />
-      <div *ngIf="password.invalid && password.touched" class="text-danger">
-        <div *ngIf="password.errors?.['required']">Password is required.</div>
-        <div *ngIf="password.errors?.['minlength']">Password must be at least 6 characters.</div>
-      </div>
-    </div>
-
-    <!-- Select Field -->
-    <div class="mb-3">
-      <label for="country" class="form-label">Country</label>
-      <select
-        id="country"
-        name="country"
-        class="form-select"
-        [(ngModel)]="country"
-        required
-        #country="ngModel"
-      >
-        <option value="">Select a country</option>
-        <option value="usa">USA</option>
-        <option value="canada">Canada</option>
-        <option value="uk">UK</option>
-      </select>
-      <div *ngIf="country.invalid && country.touched" class="text-danger">
-        Country is required.
-      </div>
-    </div>
-
-    <!-- New: Gender Field (Radio Buttons) -->
-    <div class="mb-3">
-      <label class="form-label">Gender</label>
-      <div class="form-check">
+  <div class="form-container">
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
         <input
-          type="radio"
-          id="male"
-          name="gender"
-          value="male"
-          class="form-check-input"
-          [(ngModel)]="gender"
+          type="text"
+          id="username"
+          name="username"
+          class="form-control"
+          [(ngModel)]="username"
           required
-          #gender="ngModel"
+          minlength="3"
+          #username="ngModel"
         />
-        <label for="male" class="form-check-label">Male</label>
+        <div *ngIf="username.invalid && username.touched" class="text-danger">
+          <div *ngIf="username.errors?.['required']">Username is required.</div>
+          <div *ngIf="username.errors?.['minlength']">Username must be at least 3 characters.</div>
+        </div>
       </div>
-      <div class="form-check">
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
         <input
-          type="radio"
-          id="female"
-          name="female"
-          value="female"
-          class="form-check-input"
-          [(ngModel)]="gender"
+          type="email"
+          id="email"
+          name="email"
+          class="form-control"
+          [(ngModel)]="email"
           required
+          email
+          #email="ngModel"
         />
-        <label for="female" class="form-check-label">Female</label>
+        <div *ngIf="email.invalid && email.touched" class="text-danger">
+          <div *ngIf="email.errors?.['required']">Email is required.</div>
+          <div *ngIf="email.errors?.['email']">Please enter a valid email.</div>
+        </div>
       </div>
-      <div class="form-check">
+
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
         <input
-          type="radio"
-          id="other"
-          name="other"
-          value="other"
-          class="form-check-input"
-          [(ngModel)]="gender"
+          type="password"
+          id="password"
+          name="password"
+          class="form-control"
+          [(ngModel)]="password"
           required
+          minlength="6"
+          #password="ngModel"
         />
-        <label for="other" class="form-check-label">Other</label>
+        <div *ngIf="password.invalid && password.touched" class="text-danger">
+          <div *ngIf="password.errors?.['required']">Password is required.</div>
+          <div *ngIf="password.errors?.['minlength']">Password must be at least 6 characters.</div>
+        </div>
       </div>
-      <div *ngIf="gender.invalid && gender.touched" class="text-danger">
-        Gender is required.
-      </div>
-    </div>
 
-    <!-- New: Status Field (Radio Buttons) -->
-    <div class="mb-3">
-      <label class="form-label">Status</label>
-      <div class="form-check">
-        <input
-          type="radio"
-          id="permanent"
-          name="status"
-          value="permanent"
-          class="form-check-input"
-          [(ngModel)]="status"
+      <div class="mb-3">
+        <label for="country" class="form-label">Country</label>
+        <select
+          id="country"
+          name="country"
+          class="form-select"
+          [(ngModel)]="country"
           required
-          #status="ngModel"
-        />
-        <label for="permanent" class="form-check-label">Permanent</label>
+          #country="ngModel"
+        >
+          <option value="">Select a country</option>
+          <option value="usa">USA</option>
+          <option value="canada">Canada</option>
+          <option value="uk">UK</option>
+        </select>
+        <div *ngIf="country.invalid && country.touched" class="text-danger">
+          Country is required.
+        </div>
       </div>
-      <div class="form-check">
-        <input
-          type="radio"
-          id="probationary"
-          name="probationary"
-          value="probationary"
-          class="form-check-input"
-          [(ngModel)]="status"
-          required
-        />
-        <label for="probationary" class="form-check-label">Probationary</label>
+
+      <div class="mb-3">
+        <label class="form-label">Gender</label>
+        <div class="row">
+          <div class="col-auto">
+            <div class="form-check">
+              <input
+                type="radio"
+                id="male"
+                name="gender"
+                value="male"
+                class="form-check-input"
+                [(ngModel)]="gender"
+                required
+                #gender="ngModel"
+              />
+              <label for="male" class="form-check-label">Male</label>
+            </div>
+          </div>
+          <div class="col-auto">
+            <div class="form-check">
+              <input
+                type="radio"
+                id="female"
+                name="female"
+                value="female"
+                class="form-check-input"
+                [(ngModel)]="gender"
+                required
+              />
+              <label for="female" class="form-check-label">Female</label>
+            </div>
+          </div>
+          <div class="col-auto">
+            <div class="form-check">
+              <input
+                type="radio"
+                id="other"
+                name="other"
+                value="other"
+                class="form-check-input"
+                [(ngModel)]="gender"
+                required
+              />
+              <label for="other" class="form-check-label">Other</label>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="gender.invalid && gender.touched" class="text-danger">
+          Gender is required.
+        </div>
       </div>
-      <div *ngIf="status.invalid && status.touched" class="text-danger">
-        Status is required.
+
+      <div class="mb-3">
+        <label class="form-label">Status</label>
+        <div class="row">
+          <div class="col-auto">
+            <div class="form-check">
+              <input
+                type="radio"
+                id="permanent"
+                name="status"
+                value="permanent"
+                class="form-check-input"
+                [(ngModel)]="status"
+                required
+                #status="ngModel"
+              />
+              <label for="permanent" class="form-check-label">Permanent</label>
+            </div>
+          </div>
+          <div class="col-auto">
+            <div class="form-check">
+              <input
+                type="radio"
+                id="probationary"
+                name="probationary"
+                value="probationary"
+                class="form-check-input"
+                [(ngModel)]="status"
+                required
+              />
+              <label for="probationary" class="form-check-label">Probationary</label>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="status.invalid && status.touched" class="text-danger">
+          Status is required.
+        </div>
       </div>
-    </div>
 
-    <!-- New: Comments Field (Textarea) -->
-    <div class="mb-3">
-      <label for="comments" class="form-label">Comments (Notes)</label>
-      <textarea
-        id="comments"
-        name="comments"
-        class="form-control"
-        [(ngModel)]="comments"
-        rows="4"
-        placeholder="Enter any additional notes..."
-      ></textarea>
-    </div>
+      <div class="mb-3">
+        <label for="comments" class="form-label">Comments (Notes)</label>
+        <textarea
+          id="comments"
+          name="comments"
+          class="form-control"
+          [(ngModel)]="comments"
+          rows="4"
+          placeholder="Enter any additional notes..."
+        ></textarea>
+      </div>
 
-    <!-- Submit Button -->
-    <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Submit</button>
-  </form>
-
-
+      <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Submit</button>
+    </form>
+  </div>
 </div>
