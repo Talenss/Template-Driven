@@ -1,16 +1,50 @@
-.container {
-  max-width: 600px;
+/* Styles for the template-driven form */
+.form-container {
+  background-color: #ffffff; /* White background for the form */
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
+.mb-3 {
+  margin-bottom: 1.5rem; /* Extra spacing between fields */
+}
+
+/* Highlight input fields on focus */
+.form-control:focus {
+  border-color: #007bff; /* Blue border on focus */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Blue glow */
+}
+
+/* Style radio buttons and labels */
+.form-check {
+  margin-bottom: 0.5rem;
+}
+
+.form-check-label {
+  font-weight: normal;
+}
+
+/* Style textarea */
+textarea {
+  resize: vertical; /* Allow vertical resizing only */
+}
+
+/* Error messages */
 .text-danger {
   font-size: 0.875rem;
+  color: #dc3545; /* Bootstrap danger red */
 }
 
-.btn:disabled {
-  opacity: 0.6;
+/* Submit button */
+.btn-primary {
+  width: 100%; /* Full-width button */
+  padding: 10px;
 }
 
-/* Optional: Style for textarea */
-textarea {
-  resize: vertical;  /* Allow vertical resizing */
+/* Form state display */
+.mt-3 p {
+  font-size: 0.9rem;
+  color: #666;
 }
